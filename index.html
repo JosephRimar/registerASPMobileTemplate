@@ -3,30 +3,45 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="Free Web tutorials">
 	<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="main.styles.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </header>
 	<body>
 		<div id="mainWrapper">
-			<header>
-				<div id="mainHeaderLogo">
-					<img src="images/accelaLogo.gif">
-				</div>
-				<div id="pageTitle">Mobile Template</div>
-				<div id="navBar">
-					<ul id="navItems">
-						<li class='navlink'><a href=""></a>Beaches</li>
-						<li class='navlink'><a href=""></a>Fishing</li>
-						<li class='navlink'><a href=""></a>Hiking</li>
-						<li class='navlink'><a href=""></a>Government</li>
-						<li class='navlink'><a href=""></a>About</li>
-					</ul>
+			<header id="siteHeader">
+				<div id='headerWrap'>
+					<img id="mainHeaderLogo" src="images/accelaLogo.gif">
+					<!-- nav-icon animation credit Jesse Couch -->
+					
+						<div id='nav-icon3'>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					
+					<div id="navBar">
+						<ul id="navItems">
+							<a href=""><li class='navlink'>BEACHES<i class="fa fa-rocket goIcon" aria-hidden="true"></i></li></a>
+							<a href=""><li class='navlink'>FISHING<i class="fa fa-rocket goIcon" aria-hidden="true"></i></li></a>
+							<a href=""><li class='navlink'>HIKING<i class="fa fa-rocket goIcon" aria-hidden="true"></i></li></a>
+							<a href=""><li class='navlink'>PARKS<i class="fa fa-rocket goIcon" aria-hidden="true"></i></li></a>
+							<a href=""><li class='navlink'>ABOUT<i class="fa fa-rocket goIcon" aria-hidden="true"></i></li></a>
+						</ul>
+					</div>
 				</div>
 			</header>
+			<div id="partnerImage">
+				<h4>Accela's Civics Platform</h4>
+				
+			</div>
 			<div id="weatherForcastOuter">
-				<div id="dailyForcast"></div>
-				<div id="weeklyForcast"></div>
+				<div id="dailyForcast">Todays Forcast</div>
+				<div id="weeklyForcast">Weekly Forcast</div>
 			</div>
 			<div id="mainContent">
 				<div id="resultsInsert">
@@ -41,13 +56,28 @@
 			</div>
 			<footer>
 				<ul>
-					<li><a href="">Footer link</a></li>
-					<li><a href="">Footer link</a></li>
-					<li><a href="">Footer link</a></li>
-					<li><a href="">Footer link</a></li>
-					<li><a href="">Footer link</a></li>
+					<li><a href="http://accela.com/platform">PLATFORM</a></li>
+					<li><a href="http://accela.com/solutions">SOLUTIONS</a></li>
+					<li><a href="http://accela.com/resources">RESOURCES</a></li>
+					<li><a href="http://accela.com/company">COMPANY</a></li>
+					<li><a href="http://accela.com/contact">CONTACT</a></li>
 				</ul>
+				<h5>Powered By&nbsp&nbsp <img src="images/accelaLogo.gif"></h5>
 			</footer>
-			</div> <!-- close mainWrapper -->
+		</div> <!-- close mainWrapper -->
+		<script 	type="text/javascript">
+		$('#nav-icon3').click(function() {
+		$(this).toggleClass('open');
+		$('#navBar').toggleClass('active');
+	});
+
+	</script>
 	</body>
 </html>
+
+
+
+
+
+
+
