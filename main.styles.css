@@ -1,3 +1,17 @@
+
+
+@font-face {
+    font-family: 'MeteoconsRegular';
+    src: url('meteocons-webfont.eot');
+    src: url('meteocons-webfont.eot?#iefix') format('embedded-opentype'),
+         url('meteocons-webfont.woff') format('woff'),
+         url('meteocons-webfont.ttf') format('truetype'),
+         url('meteocons-webfont.svg#MeteoconsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /*======================= Styling Begins Here =======================*/
 html {
 	/*background-color: #282B2D;*/
@@ -11,12 +25,15 @@ body , #mainWrapper{
 	
 }
 
+
+
 #siteHeader {
 	background-color: #282B2D;
 	height: 76px;
 }
 
 #headerWrap {
+	margin: 0 auto;
 	position: relative;
 }
 
@@ -27,7 +44,7 @@ body , #mainWrapper{
 
 #partnerIcon {
 	height: 36px;
-	width: 40px;
+	/*width: 40px;*/
 	color: white;
 	position: absolute;
 	left: 20px;
@@ -175,7 +192,6 @@ background-color: #00ffbf;
 
 .navlink:hover {
 	background-color: rgba(0,0,0,.2);
-	/*background-color: rgba(0, 204, 153,.7);*/
 }
 
 
@@ -214,33 +230,68 @@ background-color: #00ffbf;
 
 #partnerImage h4 {
 	position: absolute;
-	color: white;
+	color: #282B2D;
 	bottom: 6%;
-	left: 5%;
-	width: 45%;
+	left: 3%;
+	width: 190px;
 	margin: 0;
+	padding: 5px;
 	border-radius: 0px;
-	font-weight: 100;
-	font-size: 1.2em;
+	font-weight: 400;
+	font-size: .9em;
 	letter-spacing: 2px;
+	background-color: white;
 }
 
 /*===== weather divs =====*/
+
+
+#weeklyHeading, #weeklyHeading p {
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+
+
+#weeklyHeading {
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 5px;
+	position: relative;
+	background-color: #282B2D;
+}
+
+#weeklyHeading a {
+	text-decoration: none;
+	color: silver;
+}
+#weeklyHeading:hover {
+	cursor: pointer;
+}
+
+
+ #weeklyHeading p {
+ 	font-size: .5em;
+ 	margin-left: 10px;
+ }
 #weatherForcastOuter {
 	/*height: 230px;*/
 	background-color: #282B2D;
 	margin: 0;
 	padding-bottom: 25px;
 }
+#weatherForcastOuter.inactive {
+	display: none;
+}
 
 #dailyForcast {
-	padding-top: 10px;
+	padding:0 0 10px 0;
 	margin: 0;
 	color: white;
 }
 #currentConditions {
 	font-weight: 100;
-	margin: 0 0 10px 0;
+	/*margin: 0 0 10px 0;*/
 	padding: 0;
 }
 #currentConditions h4, #currentConditions h2 {
@@ -272,40 +323,25 @@ background-color: #00ffbf;
 	margin: 5px auto;
 	height: 100px;
 	padding: 0;
-	background-color: rgba(0,0,0,.5);
+	background-color: rgba(0,0,0,.2);
 	border-radius: 5px;
 }
 
 #weeklyForcast.inactive {
 	display: none;
 }
-
-#weeklyHeading, #weeklyHeading p {
-	color: white;
-	margin: 0;
-	padding: 0;
-}
-#weeklyHeading {
-	width: 90%;
-	margin: 0 auto;
-	position: relative;
-}
-#weeklyHeading:hover {
-	cursor: pointer;
+#dailyForcast.inactive {
+	display: none;
 }
 
- #weeklyHeading p {
- 	font-size: .5em;
- 	margin-left: 10px;
- }
+
 
 .dailyData {
 	display: table-cell;
-	margin:0;
-	padding: 0;
-	width: 13%;
-	height: 100px;
+}
 
+.weather-icon {
+	font-family: 'MeteoconsRegular';
 }
 
 .dailyData h4 {
@@ -313,7 +349,19 @@ background-color: #00ffbf;
 	padding: 0;
 	color: white;
 	font-size: .8em;
-	line-height: 25px;
+}
+
+.dailyData h4:nth-child(1) {
+	margin-top: 5px;
+}
+
+.dailyData h4:nth-child(2) {
+	font-size: 1.2em;
+	line-height: 40px;
+}
+
+.dailyData h4:nth-child(4) {
+	color: silver;
 }
 
 .weatherClose {
@@ -325,8 +373,8 @@ background-color: #00ffbf;
 .weatherClose.inactive {
 	color: white;
 	-webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
+  	-moz-transform: rotate(180deg);
+  	-o-transform: rotate(180deg);
 	transform: rotate(180deg);
 
 }
@@ -336,7 +384,7 @@ background-color: #00ffbf;
 /*===== Begin results.asp Content Divs =====*/
 #resultsInsert {
 	width: 90%;
-	margin: 50px auto;
+	margin: 75px auto;
 	height: 400px; /*remove this later !!!!*/
 	text-align: center; /*remove this later !!!!*/
 	border: solid 1px black;
@@ -349,13 +397,17 @@ background-color: #00ffbf;
 	margin:  10px 0;
 }
 
+/*===== End Results.asp Divs =====*/
+
+/*===== Begin Footer Content Divs =====*/
+
 footer {
 	background-color: #282B2D;
 	color: white;
 	font-size: .8em;
-	margin-top: 100px;
+	/*margin-top: 100px;*/
 	margin-bottom: 0;
-	padding: 0;
+	padding: 10px 0 0 0;
 	letter-spacing: 1px;
 }
 footer ul {
@@ -367,15 +419,16 @@ footer ul {
 .mainFooterLink {
 	padding: 20px 10px;
 	margin: 0 0 10px 0;
+	position: relative;
 	border-bottom: solid 1px rgba(255,255,255,.1);
 	border-radius: 5px;
 	font-size: 1em;
 	font-weight: 400;
 	color: white;
 }
-.mainFooterLink:nth-child(1) {
-	margin-top: 10px;
-}
+
+
+
 .mainFooterLink.active {
  	padding-bottom: 0;
  	margin-bottom: 10px;
@@ -395,7 +448,7 @@ footer ul {
 	display: inline;
 	color: white;
 	position: absolute;
-	right: 40px;
+	right: 10px;
 	font-size: 1.2em;
 }
 
@@ -431,23 +484,26 @@ footer ul {
  	display: none;
  	width: 100%;
  	margin: 0;
- 	padding: 0;
+ 	padding: 5px 0;
  	color: white;
  }
 
 .footerHiddenInfo.active {
-	display: block;
+	/*display: block;*/
 }
 
  .footerHiddenInfoItems {
-	margin: 10px 0;
+	margin:0;
 	padding: 10px;
-	
 	font-size: .9em;
 	border-top: solid 1px rgba(255,255,255,.1);
 	border-radius: 5px;
 	line-height: 25px;
  }
+
+ .footerHiddenInfoItems:first-child {
+	margin-top: 15px;
+}
  .footerHiddenInfoItems:hover {
  	background-color: rgba(255,255,255,.1)
  }
@@ -458,6 +514,216 @@ footer ul {
  }
 
 
+/* =================== Media Queries  =================== */
+
+/*iPad width*/
+@media (min-width: 768px) {
+	#partnerImage {
+		height: 320px;
+	}
+
+	#partnerImage h4 {
+		width: 220px;
+		font-size: 1.1em;
+	}
+	#navBar {
+		font-size: .9em;
+	}
+
+	.navlink {
+		height: 61px;
+		line-height: 60px;
+		
+	}
+
+	/*===== weather divs =====*/
+	#weatherForcastOuter {
+		padding-bottom: 35px;
+		max-width: 
+	}
+
+	#dailyForcast {
+		/*padding-top: 20px;*/
+	}
+	#currentConditions {
+		font-weight: 100;
+		margin: 0 0 20px 0;
+	}
+	#currentConditions h4 {
+		font-size: .9em;
+	}
+
+	#currentConditions h2 {
+		font-size: 1.4rem;
+	}
+
+	#weeklyForcast {
+		margin: 5px auto;
+		height: 120px;
+	}
+
+	#weeklyHeading p {
+ 		font-size: .8em;
+ 	}
+
+	.dailyData h4 {
+
+		font-size: 1em;
+	}
+
+	.dailyData h4:nth-child(1) {
+		margin-top: 6px;
+	}
+
+	.dailyData h4:nth-child(2) {
+		font-size: 1.4em;
+		line-height: 50px;
+	}
+
+	.mainFooterLink {
+		padding: 20px 10px;
+		margin: 0 0 10px 0;
+		border-bottom: solid 1px rgba(255,255,255,.1);
+		border-radius: 5px;
+		font-size: 1.2em;
+		font-weight: 400;
+		color: white;
+	} 
+	.footerHiddenInfoItems {
+		/*margin: 15px 0;*/
+		padding: 15px;
+	}
+	.footerHiddenInfoItems:first-child {
+		margin-top: 20px;
+	}
+}
+
+/*Desktop/Laptop width*/
+@media (min-width: 1024px) {
+
+	#headerWrap {
+		max-width: 1180px;
+	}
+
+	#weeklyHeading, #weeklyForcast, #resultsInsert, footer > ul, footer > h5 {
+	
+	max-width: 1180px;
+}
+
+	#nav-icon3, #nav-icon3.open {
+		display: none;
+	}
+
+	#navBar {
+		display: block !important; /*need important to correct class toggle*/
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin-top: 12px;
+		width: 50%;
+	}
+
+	#navItems {
+		display: inline;
+		padding: 0;
+		margin-right: 0;
+	}
+
+
+.navlink {
+	display: inline;
+	float: right;
+	border: none;
+	
+	/*position: relative;*/
+}
+
+
+	#partnerImage {
+		height: 360px;
+	}
+
+	#partnerImage h4 {
+		width: 400px;
+		font-size: 1.8em;
+		font-weight: 300;
+		left: 58%;
+	}
+	#navBar {
+		font-size: .9em;
+	}
+
+	.navlink {
+		height: 61px;
+		line-height: 60px;
+		
+	}
+
+	/*===== weather divs =====*/
+	#weatherForcastOuter {
+		padding-bottom: 35px;
+	}
+	#currentConditions h4, #currentConditions h2 {
+		font-weight: 300;
+	}
+	#currentConditions {
+		font-weight: 100;
+		margin: 0 0 20px 0;
+	}
+	#currentConditions h4 {
+		font-size: .9em;
+	}
+
+	#currentConditions h2 {
+		font-size: 1.4rem;
+	}
+
+	#weeklyForcast {
+		margin: 5px auto;
+		height: 120px;
+	}
+
+	#weeklyHeading p {
+ 		font-size: .8em;
+ 	}
+
+	.dailyData h4 {
+
+		font-size: 1em;
+	}
+
+	.dailyData h4:nth-child(1) {
+		margin-top: 6px;
+	}
+
+	.dailyData h4:nth-child(2) {
+		font-size: 1.4em;
+		line-height: 50px;
+	}
+
+	footer ul, footer h5 {
+		margin: 0 auto;
+	}
+
+	.mainFooterLink {
+		padding: 20px 10px;
+		margin: 0 0 10px 0;
+		border-bottom: solid 1px rgba(255,255,255,.1);
+		border-radius: 5px;
+		font-size: 1em;
+		font-weight: 400;
+		color: white;
+	} 
+	.footerHiddenInfoItems {
+		/*margin: 15px 0;*/
+		padding: 15px;
+	}
+	.footerHiddenInfoItems:first-child {
+		margin-top: 20px;
+	}
+}
+
+}
 
 
 

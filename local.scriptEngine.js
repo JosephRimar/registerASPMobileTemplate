@@ -6,17 +6,21 @@ $(document).ready(function() {
 // =============== Styling Scripts ===============
 	$('#nav-icon3').click(function() {
 		$(this).toggleClass('open');
-		$('#navBar').toggleClass('active');
+		// $('#navBar').toggleClass('active');
+		$('#navBar').slideToggle(100);
 	});
 			
 	$('.openDownArrow').click(function() {
-		$(this).siblings().toggleClass('active');
+		// $(this).siblings().toggleClass('active');
+		$(this).siblings().slideToggle(100);
 		$(this).parent().toggleClass('active');
 		$(this).toggleClass('open');
 	});
 
 	$('#weeklyHeading').click(function() {
 		$('#weeklyForcast').toggleClass('inactive');
+		$('#dailyForcast').toggleClass('inactive');
+		$('#weatherForcastOuter').toggleClass('inactive');
 		$('.weatherClose').toggleClass('inactive');
 	});
 
