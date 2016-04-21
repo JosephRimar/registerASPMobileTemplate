@@ -25,13 +25,24 @@ body , #mainWrapper{
 	clear: both;
 }
 
-#mainHeaderLogo {
+#partnerIcon {
 	height: 36px;
-	width: 110px;
-	border-radius: 5px;
+	width: 40px;
+	color: white;
 	position: absolute;
 	left: 20px;
 	top: 20px;
+}
+
+#partnerIcon h2 {
+	line-height: 36px;
+	margin:0;
+	padding:0;
+	font-weight: 400;
+}
+
+#partnerIcon span {
+	font-size: .8em;
 }
 
 /* ================= NavIconAnimation ===================*/
@@ -180,7 +191,11 @@ background-color: #00ffbf;
 	
 }
 
-#navBar a:hover .goIcon{
+.goIcon {
+	display: none;
+}
+
+#navBar a:hover .goIcon {
 	display: inline;
 	color: #00ffbf;
 }
@@ -189,9 +204,11 @@ background-color: #00ffbf;
 #partnerImage {
 	background: url(images/stock-sunset.jpg) no-repeat 50% / cover;	
 	width: 100%;
-	height: 250px;
+	height: 265px;
 	position: relative;
 	border-bottom: solid 1px white;
+	margin-bottom: 0;
+	padding-bottom: 0;
 	
 }
 
@@ -208,31 +225,122 @@ background-color: #00ffbf;
 	letter-spacing: 2px;
 }
 
+/*===== weather divs =====*/
 #weatherForcastOuter {
-	height: 300px;
-	/*background-color: #282B2D;*/
+	/*height: 230px;*/
+	background-color: #282B2D;
 	margin: 0;
+	padding-bottom: 25px;
 }
 
 #dailyForcast {
-	padding-top: 25px;
+	padding-top: 10px;
+	margin: 0;
+	color: white;
+}
+#currentConditions {
+	font-weight: 100;
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+#currentConditions h4, #currentConditions h2 {
+	padding-top: 10px;
+	margin: 0;
+	font-weight: 100;
+}
+#currentConditions h4 {
+	font-size: .7em;
+}
+
+#currentConditions h2 {
+	font-size: 1.1rem;
 }
 
 #dailyForcast, #weeklyForcast {
-	
 	text-align: center;
-	
-}
-#weeklyForcast {
-	margin: 100px;
-	border: solid 1px black;
 }
 
+.weatherClose {
+	color: #00ffbf;
+	position: absolute;
+	right: 10px;
+	top: 0;
+}
+#weeklyForcast {
+	display: table;
+	width: 90%;
+	margin: 5px auto;
+	height: 100px;
+	padding: 0;
+	background-color: rgba(0,0,0,.5);
+	border-radius: 5px;
+}
+
+#weeklyForcast.inactive {
+	display: none;
+}
+
+#weeklyHeading, #weeklyHeading p {
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+#weeklyHeading {
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+}
+#weeklyHeading:hover {
+	cursor: pointer;
+}
+
+ #weeklyHeading p {
+ 	font-size: .5em;
+ 	margin-left: 10px;
+ }
+
+.dailyData {
+	display: table-cell;
+	margin:0;
+	padding: 0;
+	width: 13%;
+	height: 100px;
+
+}
+
+.dailyData h4 {
+	margin: 0;
+	padding: 0;
+	color: white;
+	font-size: .8em;
+	line-height: 25px;
+}
+
+.weatherClose {
+	color: #00ffbf;
+	position: absolute;
+	right: 10px;
+}
+
+.weatherClose.inactive {
+	color: white;
+	-webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+	transform: rotate(180deg);
+
+}
+
+/*===== End Weather Divs =====*/
+
+/*===== Begin results.asp Content Divs =====*/
 #resultsInsert {
 	width: 90%;
-	margin: auto;
+	margin: 50px auto;
+	height: 400px; /*remove this later !!!!*/
 	text-align: center; /*remove this later !!!!*/
 	border: solid 1px black;
+	border-radius: 1px;
 	box-shadow: 
 }
 #resultsInsert ul {
@@ -240,45 +348,113 @@ background-color: #00ffbf;
 	padding: 0;
 	margin:  10px 0;
 }
+
 footer {
 	background-color: #282B2D;
 	color: white;
 	font-size: .8em;
 	margin-top: 100px;
 	margin-bottom: 0;
-	height: 250px;
+	padding: 0;
+	letter-spacing: 1px;
 }
 footer ul {
 	list-style: none;
-	text-align: center;
 	padding:0;
-	margin:0;
+	margin:0 20px;
 }
 
-footer ul li {
-	padding: 10px 0;
+.mainFooterLink {
+	padding: 20px 10px;
+	margin: 0 0 10px 0;
 	border-bottom: solid 1px rgba(255,255,255,.1);
+	border-radius: 5px;
 	font-size: 1em;
-	font-weight: 100;
+	font-weight: 400;
+	color: white;
 }
- footer ul a {
- 	color: white;
- 	text-decoration: none;
- 	padding: 20px;
- }
-  footer ul a:hover {
-  	font-weight: 300;
-  }
+.mainFooterLink:nth-child(1) {
+	margin-top: 10px;
+}
+.mainFooterLink.active {
+ 	padding-bottom: 0;
+ 	margin-bottom: 10px;
+ 	background-color: rgba(0,0,0,.8);
+ 	color: #00ffbf;
+}
+.mainFooterLink.active:hover {
+	background-color: black;
+}
+
+.mainFooterLink:hover {
+	background-color: rgba(0,0,0,.5);
+}
+
+.openDownArrow {
+	padding: 5px 20px;
+	display: inline;
+	color: white;
+	position: absolute;
+	right: 40px;
+	font-size: 1.2em;
+}
+
+.openDownArrow:hover, .footerHiddenInfo:hover {
+	cursor: pointer;
+}
+
+.openDownArrow.open {
+	color: #00ffbf;
+	-webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+ 
 
  footer h5 {
  	text-align: center;
- 	padding-bottom: 10px;
+ 	padding-bottom: 30px;
+ 	margin-bottom: 0;
  }
 
  footer img {
- 	height: 22px;
- 	width: 78px;
- 	border-radius: 4px;
+ 	height: 18px;
+ 	width: 68px;
+ 	border-radius: 1px;
+ 	-webkit-transform: translateY(20%);
+  	-ms-transform: translateY(20%);
+  	transform: translateY(20%);
+ }
+
+ .footerHiddenInfo {
+ 	display: none;
+ 	width: 100%;
+ 	margin: 0;
+ 	padding: 0;
+ 	color: white;
+ }
+
+.footerHiddenInfo.active {
+	display: block;
+}
+
+ .footerHiddenInfoItems {
+	margin: 10px 0;
+	padding: 10px;
+	
+	font-size: .9em;
+	border-top: solid 1px rgba(255,255,255,.1);
+	border-radius: 5px;
+	line-height: 25px;
+ }
+ .footerHiddenInfoItems:hover {
+ 	background-color: rgba(255,255,255,.1)
+ }
+
+ .phoneLink a {
+ 	color: white;
+ 	text-decoration: none;
  }
 
 

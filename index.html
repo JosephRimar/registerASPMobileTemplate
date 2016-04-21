@@ -2,6 +2,7 @@
 <header>
 	<meta charset="UTF-8">
 	<meta name="description" content="Free Web tutorials">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="HTML,CSS,XML,JavaScript">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
@@ -14,7 +15,10 @@
 		<div id="mainWrapper">
 			<header id="siteHeader">
 				<div id='headerWrap'>
-					<img id="mainHeaderLogo" src="images/accelaLogo.gif">
+					<div id='partnerIcon'>
+						<h2>AR<span>&amp</span>R</h2>
+					</div>
+					<!-- <img id="mainHeaderLogo" src="images/accelaLogo.gif"> -->
 					<!-- nav-icon animation credit Jesse Couch -->
 					
 						<div id='nav-icon3'>
@@ -36,12 +40,62 @@
 				</div>
 			</header>
 			<div id="partnerImage">
-				<h4>Accela's Civics Platform</h4>
+				<h4>Recreation &amp Resource Management</h4>
 				
 			</div>
 			<div id="weatherForcastOuter">
-				<div id="dailyForcast">Todays Forcast</div>
-				<div id="weeklyForcast">Weekly Forcast</div>
+				<div id="dailyForcast">
+					<div id='currentConditions'>
+						<h4>Currently</h4>
+						<h2>Sunny &amp 85 &deg</h2>
+					</div>
+				</div>
+				<div id='weeklyHeading'><p>7 DAY FORECAST</p><i class="fa fa-caret-up weatherClose" aria-hidden="true"></i></div>
+				<div id="weeklyForcast">
+					<div class="dailyData">
+						<h4>S</h4>
+						<h4>Sun</h4>
+						<h4>85</h4>
+						<h4>52</h4>
+					</div>
+					<div class="dailyData">
+						<h4>S</h4>
+						<h4>Sun</h4>
+						<h4>85</h4>
+						<h4>52</h4>
+					</div>
+					<div class="dailyData">
+						<h4>S</h4>
+						<h4>Sun</h4>
+						<h4>85</h4>
+						<h4>52</h4>
+					</div>
+					<div class="dailyData">
+						<h4>S</h4>
+						<h4>Sun</h4>
+						<h4>85</h4>
+						<h4>52</h4>
+					</div>
+					<div class="dailyData">
+						<h4>S</h4>
+						<h4>Sun</h4>
+						<h4>85</h4>
+						<h4>52</h4>
+					</div>
+					<div class="dailyData">
+						<h4>S</h4>
+						<h4>Sun</h4>
+						<h4>85</h4>
+						<h4>52</h4>
+					</div>
+					<div class="dailyData">
+						<h4>S</h4>
+						<h4>Sun</h4>
+						<h4>85</h4>
+						<h4>52</h4>
+					</div>
+
+				</div>
 			</div>
 			<div id="mainContent">
 				<div id="resultsInsert">
@@ -54,24 +108,60 @@
 					</ul>
 				</div>
 			</div>
-			<footer>
+			<footer class='toggleFooter'>
 				<ul>
-					<li><a href="http://accela.com/platform">PLATFORM</a></li>
-					<li><a href="http://accela.com/solutions">SOLUTIONS</a></li>
-					<li><a href="http://accela.com/resources">RESOURCES</a></li>
-					<li><a href="http://accela.com/company">COMPANY</a></li>
-					<li><a href="http://accela.com/contact">CONTACT</a></li>
+					<li class='mainFooterLink'>PLATFORM<i class="fa fa-caret-down openDownArrow" aria-hidden="true"></i>
+						<ul class='footerHiddenInfo'>
+							<li class='footerHiddenInfoItems'>How to Buy</li>
+							<li class='footerHiddenInfoItems'>Architecture</li>
+						</ul>
+					</li>
+					<li class='mainFooterLink'>SOLUTIONS<i class="fa fa-caret-down openDownArrow" aria-hidden="true"></i>
+						<ul class='footerHiddenInfo'>
+							<li class='footerHiddenInfoItems'>Asset Management</li>
+							<li class='footerHiddenInfoItems'>Citizen Relationship Management</li>
+							<li class='footerHiddenInfoItems'>Environment Health</li>
+							<li class='footerHiddenInfoItems'>Finance &amp Administration</li>
+							<li class='footerHiddenInfoItems'>Land Management</li>
+							<li class='footerHiddenInfoItems'>Legislative Management</li>
+							<li class='footerHiddenInfoItems'>Licensing &amp Case Management</li>
+							<li class='footerHiddenInfoItems'>Recreation &amp Resource Management</li>
+							<li class='footerHiddenInfoItems'>Right of Way Management</li>
+						</ul>
+					</li>
+					<li class='mainFooterLink'>RESOURCES<i class="fa fa-caret-down openDownArrow" aria-hidden="true"></i>
+						<ul class='footerHiddenInfo'>
+							<li class='footerHiddenInfoItems'>Webinars</li>
+							<li class='footerHiddenInfoItems'>Brochures</li>
+							<li class='footerHiddenInfoItems'>Success Stories</li>
+							<li class='footerHiddenInfoItems'>Product Demos</li>
+							<li class='footerHiddenInfoItems'>Videos</li>
+							<li class='footerHiddenInfoItems'>White Papers &amp eBooks</li>
+						</ul>
+					</li>
+					<li class='mainFooterLink'>COMPANY<i class="fa fa-caret-down openDownArrow" aria-hidden="true"></i>
+						<ul class='footerHiddenInfo'>
+							<li class='footerHiddenInfoItems'>News</li>
+							<li class='footerHiddenInfoItems'>Blog</li>
+							<li class='footerHiddenInfoItems'>Customers</li>
+							<li class='footerHiddenInfoItems'>Events</li>
+							<li class='footerHiddenInfoItems'>Leadership</li>
+							<li class='footerHiddenInfoItems'>Careers</li>
+							<li class='footerHiddenInfoItems'>Partners</li>
+						</ul>
+					</li>
+					<li class='mainFooterLink'>CONTACT<i class="fa fa-caret-down openDownArrow" aria-hidden="true"></i>
+						<ul class='footerHiddenInfo'>
+							<li class='footerHiddenInfoItems phoneLink'><a href="tel:(888)722-2352">(888) 722-2352 &nbsp&nbsp <i class="fa fa-phone" aria-hidden="true"></i> </a></li>
+							<li class='footerHiddenInfoItems'>Support</li>
+							<li class='footerHiddenInfoItems'>Contact Us</li>
+						</ul>
+					</li>
 				</ul>
 				<h5>Powered By&nbsp&nbsp <img src="images/accelaLogo.gif"></h5>
 			</footer>
 		</div> <!-- close mainWrapper -->
-		<script 	type="text/javascript">
-		$('#nav-icon3').click(function() {
-		$(this).toggleClass('open');
-		$('#navBar').toggleClass('active');
-	});
-
-	</script>
+		<script type="text/javascript" src="local.scriptEngine.js"></script>
 	</body>
 </html>
 
