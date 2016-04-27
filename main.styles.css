@@ -134,7 +134,7 @@ body , #mainWrapper{
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   left: 8px;
-background-color: #00ffbf;
+background-color: #33CCFF;
 }
 
 #nav-icon3.open span:nth-child(3) {
@@ -143,7 +143,7 @@ background-color: #00ffbf;
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 left: 8px;
-background-color: #00ffbf;
+background-color: #33CCFF;
 }
 
 #nav-icon3.open span:nth-child(4) {
@@ -213,7 +213,7 @@ background-color: #00ffbf;
 
 #navBar a:hover .goIcon {
 	display: inline;
-	color: #00ffbf;
+	color: #33CCFF;
 }
 /* ================= End NavIconAnimation ===================*/
 
@@ -304,7 +304,7 @@ background-color: #00ffbf;
 	font-weight: 100;
 }
 #currentConditions h4 {
-	font-size: .7em;
+	font-size: .9em;
 }
 
 #currentConditions h2 {
@@ -315,12 +315,7 @@ background-color: #00ffbf;
 	text-align: center;
 }
 
-.weatherClose {
-	color: #00ffbf;
-	position: absolute;
-	right: 10px;
-	top: 0;
-}
+
 #weeklyForcast {
 	display: table;
 	width: 90%;
@@ -365,17 +360,19 @@ background-color: #00ffbf;
 }
 
 .dailyData h4:nth-child(4) {
-	color: silver;
+	color: #8C8E91;
 }
 
 .weatherClose {
-	color: #00ffbf;
+	color: #33CCFF;
 	position: absolute;
 	right: 10px;
+	top: 0;
 }
 
+
 .weatherClose.inactive {
-	color: white;
+	color: #8C8E91;
 	-webkit-transform: rotate(180deg);
   	-moz-transform: rotate(180deg);
   	-o-transform: rotate(180deg);
@@ -409,7 +406,7 @@ footer {
 	background-color: #282B2D;
 	color: white;
 	font-size: .8em;
-	/*margin-top: 100px;*/
+	max-height: 1975px;
 	margin-bottom: 0;
 	padding: 10px 0 0 0;
 	letter-spacing: 1px;
@@ -437,7 +434,7 @@ footer ul {
  	padding-bottom: 0;
  	margin-bottom: 10px;
  	background-color: rgba(0,0,0,.8);
- 	color: #00ffbf;
+ 	color: #33CCFF;
 }
 .mainFooterLink.active:hover {
 	background-color: black;
@@ -461,7 +458,7 @@ footer ul {
 }
 
 .openDownArrow.open {
-	color: #00ffbf;
+	color: #33CCFF;
 	-webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -o-transform: rotate(180deg);
@@ -598,7 +595,8 @@ footer ul {
 		padding: 15px;
 	}
 	.footerHiddenInfoItems:first-child {
-		margin-top: 20px;
+		margin-top: 10px;
+		border-top: none;
 	}
 }
 
@@ -610,7 +608,7 @@ footer ul {
 	}
 
 	body {
-		background-color: rgba(0,0,0,0.5);
+		background-color: rgba(0,0,0,0.2);
 		padding-top: 100px;
 		/*margin-top: -100px;*/
 	}
@@ -621,16 +619,16 @@ footer ul {
 		margin:  0  auto 100px;
 		max-width: 1300px;
 	}
-
-
-
-	#headerWrap, #weeklyHeading, #weeklyForcast, #resultsInsert, footer > ul, footer > h5 {
 	
+	#headerWrap, #weeklyHeading, #weeklyForcast, #resultsInsert, footer > ul, footer > h5 {
 		max-width: 1180px;
 	}
 
 	#siteHeader, #headerWrap, #mainContent,#navBar, #headerWrap, #weeklyHeading, #weeklyForcast, #weatherForcastOuter {
 		background-color: white;
+	}
+	#siteHeader, #headerWrap, #mainContent,#navBar, #headerWrap {
+		background-color: #343436;
 	}
 
 	header, #weatherForcastOuter, #mainContent{
@@ -642,9 +640,13 @@ footer ul {
 		border-bottom: solid 2px #282B2D;
 	}
 
+	#siteHeader {
+		height: 46px;
+	}
+
 	#partnerIcon {
 		left: -13%;
-		color: white;
+		color: #33CCFF;
 		z-index: 100;
 	}
 
@@ -657,7 +659,8 @@ footer ul {
 		position: absolute;
 		right: 15px;
 		top: 0;
-		margin-top: 12px;
+		margin-top: 5px;
+		height: 40px;
 		width: 70%;
 	}
 
@@ -672,18 +675,15 @@ footer ul {
 		font-weight: 400;
 	}
 
-
 	.navlink {
 		display: inline;
 		float: right;
 		border: none;
-		/*background-color: #282B2D;*/
-		color: #2B2B2D;
+		color: #D1D3D4;
 		margin-right: 30px;
-		margin-top: 20px;
+		margin-top: 0;
 		height: 40px;
 		line-height: 40px;
-		
 	}
 
 	.navlink:hover {
@@ -695,7 +695,6 @@ footer ul {
 		display: none;
 	}
 
-
 	#partnerImage {
 		height: 360px;
 		display: none;
@@ -705,8 +704,6 @@ footer ul {
 		left: 5%;
 		width: 250px;
 		font-size: 1.1em;
-	
-		
 	}
 
 	/*===== weather divs =====*/
@@ -716,6 +713,17 @@ footer ul {
 
 	#weatherForcastOuter {
 		margin-left: 15%;
+		height: 100px;
+		/*box-shadow: 0 3px 3px #2B2B2D; */
+	}
+
+	#weatherForcastOuter, #weeklyForcast, #weeklyHeading  {
+		background-color: black;/*#7F909A;*/
+	}
+
+	#weatherForcastOuter.hidden {
+		box-shadow: none;
+		height: 0;
 	}
 
 	#weeklyForcast {
@@ -724,17 +732,22 @@ footer ul {
 		border-radius: 0;
 		
 	}
-	#weeklyHeading i {
-		color: #282B2D;
+	.weatherClose {
+		
+		margin-right: 4%;
 	}
 
+	 #weeklyHeading p {
+	 	margin-left: 4%;
+	 }
+
 	 #weeklyHeading p,  #weeklyHeading a {
-		color: #282B2D;
+		color: white; /*#282B2D;*/
  		font-size: .5em;
  	}
 
 	.dailyData h4 {
-		color: grey;
+		color: white;
 		font-size: .8em;
 	}
 
@@ -747,13 +760,13 @@ footer ul {
 		line-height: 30px;
 	}
 
-	.dailyData h4:nth-child(4) {
-		
+	.dailyData:hover {
+		font-size: 1.2em;
 	}
 
 	#mainContent {
 		margin-bottom: 100px;
-		background-color: #F0F0F0 ;
+		background-color: #fff;
 	}
 
 	#resultsInsert {
@@ -769,7 +782,7 @@ footer ul {
 		position: relative;
 		min-height: 100%;
 		box-sizing: border-box;
-		background-color: #F0F0F0;
+		background-color: #fff;
 	}
 
 	footer {
@@ -782,6 +795,7 @@ footer ul {
 		min-width: 180px;
 		font-size: .6em;
 		padding-bottom: 0;
+		/*background-color: #1A2930; denim color*/
 	}
 
 	footer * {
@@ -794,15 +808,24 @@ footer ul {
 
 	.mainFooterLink {
 		margin: 0 auto;
-		
 	} 
 
-	.footerHiddenInfoItems {
-		padding: 15px;
+	.mainFooterLink:last-child {
+		border: none;
 	}
 
-	.footerHiddenInfoItems:first-child {
-		margin-top: 20px;
+	.footerHiddenInfoItems {
+		padding-left: 5px;
+		padding-right: 5px;
+		border-bottom: 1px solid #333;
+	}
+
+	/*.footerHiddenInfoItems:first-child {
+		margin-top: 10px;
+		
+	}*/
+	.footerHiddenInfoItems:last-child {
+		border: none;
 	}
 	.openDownArrow {
 		padding: 5px 20px;
