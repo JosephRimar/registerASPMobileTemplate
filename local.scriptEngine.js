@@ -1,4 +1,9 @@
 
+ 
+// ============== Use this file as a reference ============== 
+// All procuction code has been converted with uglify.js and linked to as local.scriptEngine.min.js
+
+
  $(document).ready(function() {
 // =============== Styling Scripts ===============
 
@@ -12,13 +17,6 @@ $('td').children('img').css('max-width', '100%');
 		// $('#navBar').toggleClass('active');
 		$('#navBar').slideToggle(100);
 	});
-			
-	// $('.openDownArrow').click(function() {
-	// 	$(this).siblings().slideToggle(100);
-	// 	$(this).parent().toggleClass('active');
-	// 	$(this).toggleClass('open');
-		 
-	// });
 
 	$('.mainFooterLink').click(function() {
 		$(this).toggleClass('active');
@@ -38,13 +36,18 @@ $('td').children('img').css('max-width', '100%');
 		$('.weatherClose').toggleClass('inactive');
 	});
 
+ // =============== API Calls ===============	
+
 	getWeatherData();
+
 });// End Ready Function
 
+
+ // =============== Weather Data Function Used for Ajax Call on Load Event ===============	
 function getWeatherData() {
-	//Ajax request for weather data
+	
 	// -- Google Api request for lat/long from street address
-	//Google API Key -- AIzaSyCcZ046FfroKCYLoKU1WreKXgAt9AVXGiw --- remove this line before uploading
+	//Google API Key -- AIzaSyCcZ046FfroKCYLoKU1WreKXgAt9AVXGiw --- remove this line before uploading if not using min.js file
 	var googleUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=2633+Camino+Ramon,+San+Ramon,+CA&';
 	var forecastUrl = "https://api.forecast.io/forecast/";
 	var gK = revs('wiGXV','A9','tAgXKe','rW1UKoLY','CKorfF','640ZcCyS','azIA');
@@ -61,8 +64,8 @@ function getWeatherData() {
 		
 		console.log("Response Data: " + data.results);
 		var lat = data.results[0].geometry.location.lat , lng = data.results[0].geometry.location.lng;
-		// console.log(lat);
-		// console.log(lng);
+		console.log(lat);
+		console.log(lng);
 
 		
 		//Ajax request to forecast.io api
@@ -76,7 +79,7 @@ function getWeatherData() {
 			
 		//Build Weather Divs for 7 Day Forcast
 		}).success(function(data) {
-			//console.log(data);
+			console.log(data);
 
 			//Div for current conditions
 			var currentConditions = document.getElementById('currentConditions');
@@ -91,7 +94,6 @@ function getWeatherData() {
 				
 
 				dailyData.innerHTML = '<h4>' + formatDate(Date.now() + (86400000 * i)) + '</h4>';
-				// dailyData.innerHTML += '<h4 class="weather-icon">' + getIcon(e.icon) + '</h4>';
 				dailyData.innerHTML += '<h4> <i class="wi wi-forecast-io-' + e.icon + '"></i></h4>';
 				dailyData.innerHTML += '<h4>' + Math.round(e.temperatureMax) + '</h4>';
 				dailyData.innerHTML += '<h4>' + Math.round(e.temperatureMin) + '</h4>';
@@ -108,6 +110,9 @@ function getWeatherData() {
 		$("#weatherForcastOuter").toggleClass('inactive');
 	});
 }
+
+
+ // =============== Helper Functions ===============	
 
 function skyConditions(data) {
 	switch (data) {
@@ -132,6 +137,9 @@ function skyConditions(data) {
 			return 'Sunny';
 	}
 }
+
+//Used to get correct icon from meteocons.
+	//Not currently used...switched to cdn weather icons
 
 function getIcon(data) {
 	switch (data) {
@@ -160,25 +168,13 @@ function getIcon(data) {
 }
 
 
-
-
-
-
-
 function formatDate(unixTime) {
 	var days = ['Su', 'M', 'T', 'W', 'Th', 'F', 'S'];
 
 	return days[new Date(unixTime).getDay()];
 }
 
-//change divs to equal footer height
-// 	setTimeout(function() {
-			// 	var h = $('footer').outerHeight();
-			// 	$('#mainWrapper').css('min-height', h); 
-			// 	console.log(h);
-			// }, 100);
-
-
+//Used to change input styles in results table
 function changeButtonColors(textColor, backgroundColor) {
 	var buttons = document.querySelectorAll('input[type=button]');
 
@@ -189,12 +185,13 @@ function changeButtonColors(textColor, backgroundColor) {
 }
 
 
+// Followung two functions are used to mask the api keys to google maps and forecast.io
+	//code purposely convoluded to make it harder to decipher
 function revs() {
 	var tagString = '';
 	for(var i = 0; i < arguments.length; i++) {
-		//console.log(arguments[i]);
 		tagString += arguments[i];
-		//console.log(tagString);
+		
 	}
 	var tagArr = tagString.split('').reverse();
 	return tagArr.map(function(e) {
@@ -203,9 +200,9 @@ function revs() {
 		return (eCode +13).toString(2);
 			
 	}).join('/'); 	
-
 }
- function convert(url, nums, query,kCodeNums) {
+
+function convert(url, nums, query,kCodeNums) {
  	var k = '';
  	if(query && kCodeNums) k = (function() {
  		var c = '';
@@ -224,7 +221,6 @@ function revs() {
 		
 	}).join("");
 }
-
 
 function reverseIt(str) {
 	return str.split('').reverse().join("");;
