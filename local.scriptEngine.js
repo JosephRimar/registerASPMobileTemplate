@@ -83,21 +83,24 @@ function getWeatherData() {
 
 			//Div for current conditions
 			var currentConditions = document.getElementById('currentConditions');
-			currentConditions.innerHTML = '<h4>Currently</h4>';
-			currentConditions.innerHTML += '<h2>' + skyConditions(data.currently.icon) + ' &amp ' + Math.round(data.currently.temperature) + "&deg</h2>";
+			var conditionsStr = '<h4>Currently</h4>';
+			conditionsStr += '<h2>' + skyConditions(data.currently.icon) + ' &amp ' + Math.round(data.currently.temperature) + "&deg</h2>";
+			currentConditions.innerHTML = conditionsStr;
+			
 
 			//7 Day Forcast divs for each day
 			data.daily.data.forEach(function(e, i) {
 
 
 				var dailyData = document.createElement('div');
-				
+				var dataStr = '';
 
-				dailyData.innerHTML = '<h4>' + formatDate(Date.now() + (86400000 * i)) + '</h4>';
-				dailyData.innerHTML += '<h4> <i class="wi wi-forecast-io-' + e.icon + '"></i></h4>';
-				dailyData.innerHTML += '<h4>' + Math.round(e.temperatureMax) + '</h4>';
-				dailyData.innerHTML += '<h4>' + Math.round(e.temperatureMin) + '</h4>';
+				dataStr += '<h4>' + formatDate(Date.now() + (86400000 * i)) + '</h4>';
+				dataStr += '<h4> <i class="wi wi-forecast-io-' + e.icon + '"></i></h4>';
+				dataStr += '<h4>' + Math.round(e.temperatureMax) + '</h4>';
+				dataStr += '<h4>' + Math.round(e.temperatureMin) + '</h4>';
 
+				dailyData.innerHTML = dataStr;
 				dailyData.className = 'dailyData';
 				document.getElementById('weeklyForcast').appendChild(dailyData);
 
