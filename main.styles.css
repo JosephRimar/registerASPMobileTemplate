@@ -1,17 +1,5 @@
 
 
-@font-face {
-    font-family: 'MeteoconsRegular';
-    src: url('meteocons-webfont.eot');
-    src: url('meteocons-webfont.eot?#iefix') format('embedded-opentype'),
-         url('meteocons-webfont.woff') format('woff'),
-         url('meteocons-webfont.ttf') format('truetype'),
-         url('meteocons-webfont.svg#MeteoconsRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
 /*======================= Styling Begins Here =======================*/
 html {
 	/*background-color: #282B2D;*/
@@ -303,6 +291,7 @@ background-color: #33CCFF;
 	margin: 0;
 	font-weight: 100;
 }
+
 #currentConditions h4 {
 	font-size: .9em;
 }
@@ -340,7 +329,7 @@ background-color: #33CCFF;
 }
 
 .weather-icon {
-	font-family: 'MeteoconsRegular';
+	/*font-family: '';*/
 }
 
 .dailyData h4 {
@@ -351,7 +340,8 @@ background-color: #33CCFF;
 }
 
 .dailyData h4:nth-child(1) {
-	margin-top: 5px;
+	margin-top: 3px;
+	margin-bottom: 3px;
 }
 
 .dailyData h4:nth-child(2) {
@@ -506,7 +496,8 @@ footer ul {
 	margin-top: 15px;
 }
  .footerHiddenInfoItems:hover {
- 	background-color: rgba(255,255,255,.1)
+ 	background-color: rgba(255,255,255,.1);
+ 	cursor: pointer;
  }
 
  .phoneLink a {
@@ -534,7 +525,6 @@ footer ul {
 	.navlink {
 		height: 61px;
 		line-height: 60px;
-		
 	}
 
 	/*===== weather divs =====*/
@@ -543,9 +533,6 @@ footer ul {
 		max-width: 
 	}
 
-	#dailyForcast {
-		/*padding-top: 20px;*/
-	}
 	#currentConditions {
 		font-weight: 100;
 		margin: 0 0 20px 0;
@@ -613,10 +600,21 @@ footer ul {
 		/*margin-top: -100px;*/
 	}
 
+	header {
+		border-bottom: solid 2px #282B2D;
+	}
+
+	header, #weatherForcastOuter, #mainContent{
+		margin-left: 15%;
+		
+	}
+
 	#mainWrapper {
-		background-color: white;
-		width: 80%;
-		margin:  0  auto 100px;
+		position: relative;
+		min-height: 100%;
+		box-sizing: border-box;
+		background-color: #fff;
+		margin:  0  15% 100px;
 		max-width: 1300px;
 	}
 	
@@ -627,17 +625,9 @@ footer ul {
 	#siteHeader, #headerWrap, #mainContent,#navBar, #headerWrap, #weeklyHeading, #weeklyForcast, #weatherForcastOuter {
 		background-color: white;
 	}
+
 	#siteHeader, #headerWrap, #mainContent,#navBar, #headerWrap {
 		background-color: #343436;
-	}
-
-	header, #weatherForcastOuter, #mainContent{
-		margin-left: 15%;
-		
-	}
-
-	header {
-		border-bottom: solid 2px #282B2D;
 	}
 
 	#siteHeader {
@@ -752,16 +742,18 @@ footer ul {
 	}
 
 	.dailyData h4:nth-child(1) {
-		margin-top: 6px;
+		margin-top: -2px;
+		margin-bottom: 0;
+
 	}
 
 	.dailyData h4:nth-child(2) {
-		font-size: 1.2em;
-		line-height: 30px;
+		margin: 0;
 	}
 
-	.dailyData:hover {
-		font-size: 1.2em;
+	.dailyData h4:nth-child(2) i {
+		font-size: 1em;
+		line-height: 25px;
 	}
 
 	#mainContent {
@@ -777,13 +769,6 @@ footer ul {
 	}
 
 	/*========= footer =========*/
-
-	#mainWrapper {
-		position: relative;
-		min-height: 100%;
-		box-sizing: border-box;
-		background-color: #fff;
-	}
 
 	footer {
 		box-sizing: border-box;
@@ -820,13 +805,10 @@ footer ul {
 		border-bottom: 1px solid #333;
 	}
 
-	/*.footerHiddenInfoItems:first-child {
-		margin-top: 10px;
-		
-	}*/
 	.footerHiddenInfoItems:last-child {
 		border: none;
 	}
+
 	.openDownArrow {
 		padding: 5px 20px;
 		display: inline;
