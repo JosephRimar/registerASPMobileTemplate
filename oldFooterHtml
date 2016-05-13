@@ -1,0 +1,292 @@
+</div>
+			</div>
+			<footer class='toggleFooter'>
+				<ul>
+					<li class='mainFooterLink'>PLATFORM<i class="fa fa-caret-down openDownArrow" aria-hidden="true"></i>
+						<ul class='footerHiddenInfo'>
+							<li class='footerHiddenInfoItems'>How to Buy</li>
+							<li class='footerHiddenInfoItems'>Architecture</li>
+						</ul>
+					</li>
+					<li class='mainFooterLink'>SOLUTIONS<i class="fa fa-caret-down openDownArrow" aria-hidden="true"></i>
+						<ul class='footerHiddenInfo'>
+							<li class='footerHiddenInfoItems'>Asset Management</li>
+							<li class='footerHiddenInfoItems'>Citizen Relationship Management</li>
+							<li class='footerHiddenInfoItems'>Environment Health</li>
+							<li class='footerHiddenInfoItems'>Finance &amp Administration</li>
+							<li class='footerHiddenInfoItems'>Land Management</li>
+							<li class='footerHiddenInfoItems'>Legislative Management</li>
+							<li class='footerHiddenInfoItems'>Licensing &amp Case Management</li>
+							<li class='footerHiddenInfoItems'>Recreation &amp Resource Management</li>
+							<li class='footerHiddenInfoItems'>Right of Way Management</li>
+						</ul>
+					</li>
+					<li class='mainFooterLink'>RESOURCES<i class="fa fa-caret-down openDownArrow" aria-hidden="true"></i>
+						<ul class='footerHiddenInfo'>
+							<li class='footerHiddenInfoItems'>Webinars</li>
+							<li class='footerHiddenInfoItems'>Brochures</li>
+							<li class='footerHiddenInfoItems'>Success Stories</li>
+							<li class='footerHiddenInfoItems'>Product Demos</li>
+							<li class='footerHiddenInfoItems'>Videos</li>
+							<li class='footerHiddenInfoItems'>White Papers &amp eBooks</li>
+						</ul>
+					</li>
+					<li class='mainFooterLink'>COMPANY<i class="fa fa-caret-down openDownArrow" aria-hidden="true"></i>
+						<ul class='footerHiddenInfo'>
+							<li class='footerHiddenInfoItems'>News</li>
+							<li class='footerHiddenInfoItems'>Blog</li>
+							<li class='footerHiddenInfoItems'>Customers</li>
+							<li class='footerHiddenInfoItems'>Events</li>
+							<li class='footerHiddenInfoItems'>Leadership</li>
+							<li class='footerHiddenInfoItems'>Careers</li>
+							<li class='footerHiddenInfoItems'>Partners</li>
+						</ul>
+					</li>
+					<li class='mainFooterLink'>CONTACT<i class="fa fa-caret-down openDownArrow" aria-hidden="true"></i>
+						<ul class='footerHiddenInfo'>
+							<li class='footerHiddenInfoItems phoneLink'><a href="tel:(888)722-2352">(888) 722-2352 &nbsp<i class="fa fa-phone" aria-hidden="true"></i> </a></li>
+							<li class='footerHiddenInfoItems'>Support</li>
+							<li class='footerHiddenInfoItems'>Contact Us</li>
+						</ul>
+					</li>
+				</ul>
+				<h5>Powered By&nbsp&nbsp <img src="https://portalvhds0j8wbr68sbmrk.blob.core.windows.net/kinsail/parks/m0001/accelaLogo.gif"></h5>
+			</footer>
+		</div> <!-- close mainWrapper -->
+<script language="JavaScript">
+<!--
+if (window.location.toString().indexOf("/results.asp") > 0) {
+	RedirectBuyLinks();
+}
+if (window.location.toString().indexOf("/secure/register/expired.asp") > 0) {
+	objLinks = document.getElementsByTagName("a");
+	for (var intLooper=0; intLooper<objLinks.length; intLooper++) {
+		if (objLinks[intLooper].title == "Start Registration Over") {
+			objLinks[intLooper].href = objLinks[intLooper].href.replace("calendar.asp", "results.asp").substring(0, objLinks[intLooper].href.replace("calendar.asp", "results.asp").indexOf("&ItemID"));
+			break;
+		}
+	}
+}
+
+if (window.location.toString().indexOf("/calendar.asp") > 0) {
+	objInputs = document.getElementsByTagName("input");
+	for (var intLooper=0; intLooper<objInputs.length; intLooper++) {
+		if (objInputs[intLooper].type == "submit" && objInputs[intLooper].name == "ChooseDates") {
+			objInputs[intLooper].style.padding = "5px";
+			objInputs[intLooper].style.border = "solid 1px #5E7534";
+			break;
+		}
+	}
+}
+function CalendarDivAdjustment() {
+	Kinsail.Positioning.SetY('DateSelectionsDiv', window.innerHeight/3);
+}
+//-->
+</script>
+
+<script type="text/javascript">
+
+ $(document).ready(function() {
+
+changeRec(document.getElementById('resultsInsert'));
+
+// =============== Styling Scripts ===============
+
+//$('td').children('img').css('max-width', '100%');
+
+
+	$('#nav-icon3').click(function() {
+		$(this).toggleClass('open');
+		$('#navBar').slideToggle(100);
+	});
+
+	$('.mainFooterLink').click(function() {
+		$(this).toggleClass('active');
+		$(this).children('.footerHiddenInfo').slideToggle(100);
+		$(this).children('.openDownArrow').toggleClass('open');
+	});
+
+        $('.footerHiddenInfoItems').click(function(e) {
+                 e.stopPropagation();
+        });
+
+	$('#weeklyHeading').click(function() {
+		$('#forcastCredit').toggleClass('inactive');
+		$('#weeklyForcast').toggleClass('inactive');
+		$('#dailyForcast').toggleClass('inactive');
+		$('#weatherForcastOuter').toggleClass('hidden');
+		$('.weatherClose').toggleClass('inactive');
+	});
+
+ // =============== API Calls ===============	
+       getWeatherData();
+
+});// End Ready Function
+
+
+ // =============== Weather Data Function Used for Ajax Call on Load Event ===============	
+function getWeatherData() {
+	
+	// -- Google Api request for lat/long from street address
+	//Google API Key -- AIzaSyCcZ046FfroKCYLoKU1WreKXgAt9AVXGiw --- remove this line before uploading if not using min.js file
+	var googleUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=2633+Camino+Ramon,+San+Ramon,+CA&';
+	var forecastUrl = "https://api.forecast.io/forecast/";
+	var gK = revs('wiGXV','A9','tAgXKe','rW1UKoLY','CKorfF','640ZcCyS','azIA');
+	var fK = revs('0b595a','3a31ae239927405','70cf281eef9');
+	$.get(convert(googleUrl, gK, true, [107,101,121,61]), function(data) {
+
+		//Check google response status
+		//console.log(data.status);
+		//If nothing returned close weather div and stop request
+		if(data.status !== "OK") {
+			$("#weatherForcastOuter").toggleClass('inactive');
+			return null;
+		}
+		
+		console.log("Response Data: " + data.results);
+		var lat = data.results[0].geometry.location.lat , lng = data.results[0].geometry.location.lng;
+		console.log(lat);
+		console.log(lng);
+
+		
+		//Ajax request to forecast.io api
+		$.ajax({
+			url:  convert(forecastUrl, fK) + '/' + lat + ',' + lng,
+			dataType: 'jsonp'
+		}).error(function(err) {
+			console.log(err.statusText);
+			//Close weather div if request fails
+			$("#weatherForcastOuter").toggleClass('inactive');
+			
+		//Build Weather Divs for 7 Day Forcast
+		}).success(function(data) {
+			//console.log(data);
+
+			//Div for current conditions
+			var currentConditions = document.getElementById('currentConditions');
+			var conditionsStr = '<h4>Currently</h4>';
+			conditionsStr += '<h2>' + skyConditions(data.currently.icon) + ' &amp ' + Math.round(data.currently.temperature) + "&deg</h2>";
+			currentConditions.innerHTML = conditionsStr;
+			
+
+			//7 Day Forcast divs for each day
+			data.daily.data.forEach(function(e, i) {
+
+
+				var dailyData = document.createElement('div');
+				var dataStr = '';
+
+				dataStr += '<h4>' + formatDate(Date.now() + (86400000 * i)) + '</h4>';
+				dataStr += '<h4> <i class="wi wi-forecast-io-' + e.icon + '"></i></h4>';
+				dataStr += '<h4>' + Math.round(e.temperatureMax) + '</h4>';
+				dataStr += '<h4>' + Math.round(e.temperatureMin) + '</h4>';
+
+				dailyData.innerHTML = dataStr;
+				dailyData.className = 'dailyData';
+				document.getElementById('weeklyForcast').appendChild(dailyData);
+
+			});
+		});
+		//If goole Ajax Fails
+	}).fail(function(err) {
+		console.log(err.statusText);
+		//Close weather div if request fails
+		$("#weatherForcastOuter").toggleClass('inactive');
+	});
+}
+
+
+
+ // =============== Helper Functions ===============	
+
+function skyConditions(data) {
+	switch (data) {
+		case 'clear-night':
+			return 'Clear';
+		case 'rain':
+			return 'Raining';
+		case 'snow':
+			return 'Snowing';
+		case 'sleet':
+			return 'Sleeting';
+		case 'wind':
+			return 'Windy';
+		case 'fog':
+			return 'Foggy';
+		case 'cloudy':
+			return 'Cloudy';
+		case 'partly-cloudy-day':
+		case 'partly-cloudy-night':
+			return 'Partly Cloudy';
+		default:
+			return 'Sunny';
+	}
+}
+
+
+function formatDate(unixTime) {
+	var days = ['Su', 'M', 'T', 'W', 'Th', 'F', 'S'];
+
+	return days[new Date(unixTime).getDay()];
+}
+
+
+// Followung two functions are used to mask the api keys to google maps and forecast.io
+	//code purposely convoluded to make it harder to decipher
+function revs() {
+	var tagString = '';
+	for(var i = 0; i < arguments.length; i++) {
+		tagString += arguments[i];
+		
+	}
+	var tagArr = tagString.split('').reverse();
+	return tagArr.map(function(e) {
+		var eCode = e.charCodeAt(0);
+		
+		return (eCode +13).toString(2);
+			
+	}).join('/'); 	
+}
+
+function convert(url, nums, query,kCodeNums) {
+ 	var k = '';
+ 	if(query && kCodeNums) k = (function() {
+ 		var c = '';
+ 		for (var i = 0; i < kCodeNums.length; i++) {
+ 			c += String.fromCharCode(kCodeNums[i]);
+ 		}
+ 		return c;
+ 	}());
+	return url + k + nums.split('/').map(function(e) {
+		var bin = 1, dec=0, x;
+		for(var i = e.length-1; i >=0; i--) {
+			dec += e[i] * bin;
+			bin *= 2;
+		}
+		return String.fromCharCode(parseInt(dec-13));
+		
+	}).join("");
+}
+
+
+//Reset width and colspan properties in table elements
+function changeRec(element) {
+		var child = element.children;
+
+ 		if(!child.length) return null; 
+
+ 		for(var i=0; i < child.length; i++) {
+ 			if(child[i].width) {
+ 				child[i].width = "";
+ 				child[i].style.maxWidth = '100% !important';
+ 			}
+if(child[i].colspan) child[i].colspan= "";
+ 			changeRec(child[i]);
+ 		}
+	}
+
+
+
+</script>
+</body>
+</html>
